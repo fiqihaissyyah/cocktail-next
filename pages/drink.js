@@ -9,15 +9,16 @@ export const Post = (props) => {
     const item = props.drink
   return (
     <div className='col-lg-3 py-3'>
-        <Link href={`/drinkdetail/${item.idDrink}`} style={{textDecoration: "none"}}>
+        <Link href={`/drinkdetail/${item.idDrink}`}>
         <div className='rounded'>
-            <Image
-            width='100%' 
+            <img
+            width={"100%"}
             src={item.strDrinkThumb} 
             alt='Cocktails Image'/>
         </div>
-            <h5 className='text-center title' style={{color: "#EFEADD" }}>{item.strDrink}</h5>
         </Link>
+        <h5 className='text-center title' style={{color: "#EFEADD" }}>{item.strDrink}</h5>
+        
     </div>
         
   )

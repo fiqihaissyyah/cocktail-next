@@ -55,7 +55,7 @@ export default function DrinkDetail() {
          { item &&
         <div className='row'>
             <div className='col-lg-4'>
-                <Image
+                <img
                     width='100%' 
                     src={item.strDrinkThumb} 
                     alt='Cocktails Image'/>
