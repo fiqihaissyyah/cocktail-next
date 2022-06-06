@@ -60,14 +60,14 @@ const Drink = () => {
         console.log(state)
     }
 
-    if(!state.posts) {
-        return (
-            <div className='py-24 text-center'>
-                <h2>No Data Found</h2>
-                <a href='/'><strong>Go Back To Home</strong></a>
-            </div>
-        )
-    }
+    // if(!state.posts) {
+    //     return (
+    //         <div className='py-24 text-center'>
+    //             <h2>No Data Found</h2>
+    //             <a href='/'><strong>Go Back To Home</strong></a>
+    //         </div>
+    //     )
+    // }
 
   return (
     <div>
