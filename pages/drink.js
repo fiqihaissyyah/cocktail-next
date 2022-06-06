@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import '../styles/Home.module.css'
 import { Container, Form, FormGroup, FormControl, Card  } from 'react-bootstrap'
 import Link from 'next/link'
+import Image from 'next/image'
 
 
 export const Post = (props) => {
@@ -10,7 +11,7 @@ export const Post = (props) => {
     <div className='col-lg-3 py-3'>
         <Link href={`/drinkdetail/${item.idDrink}`} style={{textDecoration: "none"}}>
         <div className='rounded'>
-            <img
+            <Image
             width='100%' 
             src={item.strDrinkThumb} 
             alt='Cocktails Image'/>
