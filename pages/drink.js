@@ -8,7 +8,7 @@ export const Post = (props) => {
     const item = props.drink
   return (
     <div className='col-lg-3 py-3'>
-        <a href={`/drinkdetail/${item.idDrink}`} style={{textDecoration: "none"}}>
+        <Link href={`/drinkdetail/${item.idDrink}`} style={{textDecoration: "none"}}>
         <div className='rounded'>
             <img
             width='100%' 
@@ -16,7 +16,7 @@ export const Post = (props) => {
             alt='Cocktails Image'/>
         </div>
             <h5 className='text-center title' style={{color: "#EFEADD" }}>{item.strDrink}</h5>
-        </a>
+        </Link>
     </div>
         
   )

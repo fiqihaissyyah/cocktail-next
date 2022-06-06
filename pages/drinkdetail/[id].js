@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { useRouter } from 'next/router'
 import React from 'react'
 import { useState, useEffect } from 'react'
@@ -54,7 +55,7 @@ export default function DrinkDetail() {
          { item &&
         <div className='row'>
             <div className='col-lg-4'>
-                <img
+                <Image
                     width='100%' 
                     src={item.strDrinkThumb} 
                     alt='Cocktails Image'/>
