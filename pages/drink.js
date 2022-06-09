@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/Home.module.css'
-import { Container, Form, FormGroup, FormControl, Card  } from 'react-bootstrap'
+import { Container, Form, FormGroup } from 'react-bootstrap'
 import Link from 'next/link'
-import Image from 'next/image'
 
 
 export const Post = (props) => {
@@ -17,7 +16,7 @@ export const Post = (props) => {
             alt='Cocktails Image'/>
         </div>
         </Link>
-        <h5 className='text-center title' style={{color: "#EFEADD" }}>{item.strDrink}</h5>
+        <h5 className='text-center title pt-2' style={{color: "#EFEADD" }}>{item.strDrink}</h5>
         
     </div>
         
@@ -61,14 +60,14 @@ const Drink = () => {
         console.log(state)
     }
 
-    // if(!state.posts) {
-    //     return (
-    //         <div className='py-24 text-center'>
-    //             <h2>No Data Found</h2>
-    //             <a href='/'><strong>Go Back To Home</strong></a>
-    //         </div>
-    //     )
-    // }
+    if(!state.posts) {
+        return (
+            <div className='py-24 text-center'>
+                <h2>No Data Found</h2>
+                <Link href='/'><strong>Go Back To Home</strong></Link>
+            </div>
+        )
+    }
 
   return (
     <div>
@@ -85,7 +84,7 @@ const Drink = () => {
                 </Form>
                 <div className='col-lg-4'></div>
             </div>
-            <div className='row' >
+            <div className='row d-flex justify-content-center' >
                 { state.posts.length > 0 && state.posts.map(i => 
                     <Post key={i.idDrink} drink={i} />
                 )}

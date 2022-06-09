@@ -2,7 +2,9 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import React from 'react'
 import { useState, useEffect } from 'react'
+import Footer from '../../components/Footer'
 import MyNavbar from '../../components/MyNavbar'
+import Link from 'next/link'
 
 export default function DrinkDetail() {
     const router = useRouter()
@@ -20,14 +22,14 @@ export default function DrinkDetail() {
       }
         }, [id])
 
-        // if(!state.posts) {
-        //     return (
-        //         <div className='pt-100 text-center'>
-        //             <h2>No Data Found</h2>
-        //             <a href='/'><strong>Go Back To Home</strong></a>
-        //         </div>
-        //     )
-        // }
+        if(!state.posts) {
+            return (
+                <div className='pt-100 text-center'>
+                    <h2>No Data Found</h2>
+                    <link href='/'><strong>Go Back To Home</strong></link>
+                </div>
+            )
+        }
 
     const item = state.posts;
 
@@ -52,22 +54,25 @@ export default function DrinkDetail() {
   return (
     <div className='w-100'>
         <MyNavbar/>
-         { item &&
-        <div className='row'>
-            <div className='col-lg-4'>
-                <img
-                    width='100%' 
-                    src={item.strDrinkThumb} 
-                    alt='Cocktails Image'/>
+        <div className='p-4'>
+                { item &&
+                    <div className='row'>
+                        <div className='col-lg-4 rounded' style={{color: "#8B677C"}}>
+                            <Image src={`${item.strDrinkThumb}`}
+                            loader={() => item.strDrinkThumb} alt='Img Cocktail' width={500} height={500}/>
+                        </div>
+                        <div className='col-lg-8 px-4 d-flex align-items-center' style={{color: "#EFEADD"}}>
+                          <div>
+                            <h1 className='p-2' style={{color: "#8B677C"}}>{item.strDrink}</h1>
+                            <span><strong>Ingredients : </strong><br/><ul>{ingredients}</ul></span>
+                            <p><strong>Glass : </strong><br/>{item.strGlass}</p>
+                            <p><strong>Instructions : </strong><br/>{item.strInstructions}</p>
+                            </div>
+                        </div>
+                    </div>
+                }
             </div>
-            {/* <div className='col-lg-8'>
-                    <h2 className='mb-3'>{item.strDrink}</h2>
-                    <p><strong>Ingredients : </strong><br/><ul>{ingredients}</ul></p>
-                    <p><strong>Glass : </strong><br/>{item.strGlass}</p>
-                    <p><strong>Instructions : </strong><br/>{item.strInstructions}</p>
-            </div> */}
-        </div>
-         }
+            <Footer/>
     </div>
   )
 }

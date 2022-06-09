@@ -118,3 +118,13 @@
 .title{
   color: #EFEADD;
 }
+
+.footer {
+  padding: 40px;
+  display: flex;
+  /* flex: 1; */
+  justify-content: center;
+  align-items: center;
+  /* background-color: #726567; */
+  color: #726567;
+}
